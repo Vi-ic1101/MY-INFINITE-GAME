@@ -29,15 +29,13 @@ function setup(){
     back.addImage(backImg)
     bow=createSprite(200,200,50,50)
     bow.addImage(bowImg)
-    arrow=createSprite(200,100,50,50)
+    
+   
+    arrow=createSprite(500,500,50,50)
     arrow.addImage(arrowImg)
-    arrow.debug=true
-    arrow.velocityX=2
-    alien1=createSprite(600,100,50,50)
-    alien1.addImage(alien1Img)
-    alien1.scale=0.2
-  //  alien1.velocityX=-4
-alien1.destroy=100
+    arrow.debug=true 
+    arrow.velocityX=2 
+   
     alien2=createSprite(200,400,50,50)
     alien2.addImage(alien2Img)
     alien2.scale=0.2
@@ -51,26 +49,39 @@ alien1.destroy=100
     sword.addImage(swordImg)
     sword.scale=0.2
     gold=createSprite(600,200,50,50)
-    gold.addImage(goldImg)
+    gold.addImage(goldImg)   
     gold.scale=0.3
     ruby=createSprite(600,300,50,50)
     ruby.addImage(rubyImg)
     ruby.scale=0.1
 }
  function draw(){
-     console.log(gameState)
     background(0)
-     drawSprites();
-     //alien1.debug=true
-if(gameState===PLAY){
+     console.log(gameState)
     
+   if(keyDown("space")){
+    
+   
+}
+     drawSprites();
+    alien1();
+if(gameState===PLAY){
 if(arrow.isTouching(alien1)){
     gameState=END
+    alien1.velocityX=0
     arrow.velocityX=0
  }
- //spawnAlien();
-}else if(gameState===END){}
+}else if(gameState===END){
+
 }
 
-function spawnAlien(){
-    }
+}
+
+function alien1(){
+    alien1=createSprite(600,100,50,50)
+    alien1.addImage(alien1Img)
+    alien1.scale=0.2
+    alien1.velocityX=-1
+x=World.mouseX
+y=World.mouseY
+}
